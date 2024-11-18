@@ -1,89 +1,253 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Form from "../components/Form.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="bg-red-300 h-full p-28">
+  <main class="bg-white h-full overflow-x-hidden">
     <!-- navbar -->
     <div
-      class="absolute top-5 w-4/5 border bg-white m-auto right-1/2 translate-x-1/2 p-3 rounded-full flex justify-between"
+      class="absolute top-5 border w-full max-w-5xl bg-white m-auto right-1/2 translate-x-1/2 rounded-full flex justify-between z-20"
+      style="animation:navbar-w ease-out 80s;"
     >
-      <div>
+      <div class="py-3 pl-3 flex items-center">
         <span class="font-black">ask</span><span
           class="italic text-pink-500 font-medium">form</span
         >
       </div>
-      <div class="flex gap-3">
-        <div class="font-bold">Acceuil</div>
-        <div class="text-slate-300">Fonctionnalité</div>
-        <div class="text-slate-300">Tarif</div>
-        <div class="text-slate-300">Démos</div>
+      <div class="flex gap-6 py-3 items-center">
+        <div style="font-family: 'Dela Gothic One', sans-serif;">Acceuil</div>
+        <div
+          class="text-slate-300 hover:text-slate-200"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+        >
+          Fonctionnalité
+        </div>
+        <div
+          class="text-slate-300 hover:text-slate-200"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+        >
+          Tarif
+        </div>
+        <div
+          class="text-slate-300 hover:text-slate-200"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+        >
+          Démos
+        </div>
       </div>
-      <button>Se connecter</button>
+      <button
+        class="border border-black p-3 rounded-full text-xs my-2 mr-3 hover:text-slate-500"
+        style="font-family: 'Dela Gothic One', sans-serif;">Se connecter</button
+      >
     </div>
     <!-- header -->
-    <div class="flex flex-col justify-center items-center h-[80vh] gap-3">
-      <h1 class="font-bold text-white text-6xl text-center">
-        Transformer <br /> vos besoins en Form.
-      </h1>
-      <p class="text-white font-medium">
-        Une infinité de possibilité de générer et gérer ses besoins
-      </p>
-      <button class="bg-black rounded-lg text-white p-3">Commencer</button>
-      <div class="flex">
-        <div class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border"></div>
-        <div class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border"></div>
-        <div class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border"></div>
-        <div class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border"></div>
-        <div class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border"></div>
+    <div
+      class="h-[100vh] relative overflow-x-hidden"
+      style="background: linear-gradient(180deg, #F73060 23%, rgba(138, 48, 247, 0) 100%);
+      animation:fadeInLow 2s linear;
+      
+"
+    >
+      <div class="flex flex-col justify-center items-center h-[100vh] gap-6">
+        <div
+          class="h-[435px] w-[435px] bg-[#FCFE92] rounded-full border transition-all absolute -left-36 top-20"
+          style="filter: blur(150px);
+      animation:fadeIn 2s ease-in-out, move-bottom 2s ease-in-out infinite;"
+        >
+        </div>
+        <div
+          class="h-[435px] w-[435px] bg-[#FEA492] rounded-full border transition-all absolute top-0 -right-36 opacity-0"
+          style="filter: blur(110px);
+        animation:fadeIn 2s ease-in-out forwards, move-bottom 2s ease-in-out infinite; 
+        animation-delay: 1s;  "
+        >
+        </div>
+
+        <h1
+          class="text-white text-6xl text-center"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+        >
+          Transformer vos <br /> besoins en Form.
+        </h1>
+        <p
+          class="text-white text-xl text-center"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+        >
+          Une infinité de possibilité de générer et <br /> gérer ses besoins
+        </p>
+        <button
+          class="bg-black rounded-lg text-white py-4 px-6 hover:bg-[#F73060] hover:text-slate-200 transition-all"
+          style="font-family: 'Dela Gothic One', sans-serif;"
+          >Commencer ➜</button
+        >
+        <div class="flex flex-col gap-3 items-center">
+          <div class="flex">
+            <div
+              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
+            >
+            </div>
+            <div
+              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
+            >
+            </div>
+          </div>
+          <p class="opacity-50 text-sm font-medium">
+            Plus de 40 Bêta testeur recommandent askform
+          </p>
+        </div>
       </div>
-      <p class="text-slate-300">Plus de 40 Bêta testeur recommandent askform</p>
     </div>
     <!-- Section 1 -->
-    <div class="h-[80vh] flex flex-col justify-around items-center bg-red-200">
-      <h2 class="font-bold text-3xl">
-        Différents <span class="text-pink-300">Cas d’usage</span>
+    <div class="h-[100vh] flex flex-col justify-start items-center bg-white">
+      <h2
+        class="text-[40px] mt-20"
+        style="font-family: 'Dela Gothic One', sans-serif;"
+      >
+        Différents <span class="text-[#F73060]">Cas d’usage</span>
       </h2>
-      <div class="flex relative">
-        <div
-          class="h-96 bg-slate-300 border w-96 rounded-lg absolute z-10 left-20 rotate-6"
-        >
-        </div>
-        <div
-          class="h-96 bg-slate-300 border w-96 rounded-lg absolute z-10 right-20 -rotate-6"
-        >
-        </div>
-        <div class="h-96 bg-white border w-96 rounded-lg z-30"></div>
+      <div class="relative h-full">
+        <Form position="absolute" rotate="left" blur={true} />
+        <Form position="absolute" />
+        <Form position="absolute" rotate="right" blur={true} />
       </div>
     </div>
-    <!-- Section 2 -->
-    <div class="h-[80vh] flex flex-col justify-around items-center">
+    <!-- Section 2 fonctionnalités -->
+    <div
+      class="min-h-[80vh] flex flex-col justify-around items-center px-96 py-20 gap-6"
+    >
       <h2 class="font-bold text-3xl">
         Créer votre formulaire avec simplicité <span class="text-pink-500"
           >simplicité</span
         >
       </h2>
-      <div class="h-[400px] w-[800px] bg-white border rounded-lg"></div>
-    </div>
-    <!-- Section 3 -->
-    <div class="h-[80vh] flex flex-col justify-around items-center bg-red-200">
-      <h2 class="font-bold text-3xl">Plusieurs besoin un seul outil.</h2>
-
-      <div class="flex h-full gap-20 justify-between w-full items-center">
-        <div class="flex flex-col gap-2 justify-center items-center w-1/2">
-          <h3 class="font-bold text-2xl">Et bien plus encore...</h3>
-          <div class="flex flex-col w-full gap-3">
-            <div class="w-full border font-bold p-3 bg-white rounded-lg">
-              Chat client
-            </div>
-            <div>Tracking demande</div>
-            <div>Daily task</div>
-            <div>Assignation</div>
+      <div
+        class="h-fit w-full bg-slate-100 border rounded-xl flex items-center p-6 gap-6"
+      >
+        <div class="w-1/2">
+          <Form position="relative" className="scale-75" />
+        </div>
+        <div class="flex flex-col gap-3 w-1/2">
+          <div>
+            Formats
+            <div class="w-16 h-16 bg-white border"></div>
+          </div>
+          <div>
+            Couleurs
+            <div class="w-16 h-16 bg-white border"></div>
+          </div>
+          <div>
+            Couleurs
+            <div class="w-16 h-16 bg-white border"></div>
           </div>
         </div>
-        <div class="bg-blue-400 h-1/2 w-1/2 rounded-lg"></div>
       </div>
+    </div>
+    <!-- Section 3 -->
+    <div class="h-[80vh] flex flex-col justify-around items-center py-20">
+      <h2 class="font-bold text-3xl">Plusieurs besoin un seul outil.</h2>
+
+      <div class="flex h-full gap-20 justify-between w-full items-center px-72">
+        <div class="flex flex-col gap-2 justify-center items-center w-1/2">
+          <h3
+            class="font-bold text-2xl text-left mr-auto"
+            style="font-family: 'Dela Gothic One', sans-serif;"
+          >
+            Et bien plus <br /> encore...
+          </h3>
+          <div class="flex flex-col w-full py-10 gap-6">
+            <div
+              class="w-full border font-bold p-3 bg-white rounded-lg flex justify-between"
+              style="font-family: 'Dela Gothic One', sans-serif;"
+            >
+              Chat client
+              <div>➜</div>
+            </div>
+            <div
+              style="font-family: 'Dela Gothic One', sans-serif;"
+              class="text-slate-300 hover:text-slate-200"
+            >
+              Tracking demande
+            </div>
+            <div
+              style="font-family: 'Dela Gothic One', sans-serif;"
+              class="text-slate-300 hover:text-slate-200"
+            >
+              Daily task
+            </div>
+            <div
+              style="font-family: 'Dela Gothic One', sans-serif;"
+              class="text-slate-300 hover:text-slate-200"
+            >
+              Assignation
+            </div>
+          </div>
+        </div>
+        <div class="border h-1/2 w-1/2 rounded-lg"></div>
+      </div>
+    </div>
+    <!-- Section 4 video -->
+    <div class="h-[80vh] flex flex-col justify-center items-center px-72">
+      <div class="border h-[600px] rounded-lg aspect-video"></div>
     </div>
   </main>
 </Layout>
+
+<style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes navbar-w {
+    0% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeInLow {
+    0% {
+      background-size: 400% 400%;
+      background-position: 0% 0%;
+    }
+    50% {
+      background-color: transparent;
+    }
+    100% {
+      background-size: 100% 100%;
+      background-position: 100% 100%;
+    }
+  }
+
+  @keyframes move-bottom {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(50px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+</style>

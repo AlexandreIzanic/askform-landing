@@ -1,0 +1,93 @@
+---
+interface Props {
+  title?: string;
+  body?: string;
+  href?: string;
+  rotate?: "left" | "right";
+  blur?: boolean;
+  position: "absolute" | "relative";
+  className?: string;
+}
+
+const { href, title, body, rotate, blur, position, className } = Astro.props;
+
+const rotationClass =
+  rotate === "left"
+    ? "-rotate-12  right-10 "
+    : rotate === "right"
+      ? "rotate-12 left-10"
+      : " z-30 ";
+---
+
+<div
+  id="form"
+  class={`w-auto bg-white border rounded-2xl ${className} ${position === "absolute" ? "absolute top-1/2 -translate-y-1/2 " : ""} ${position === "absolute" && !rotate && "-translate-x-1/2"} flex flex-col gap-6 p-10 ${rotationClass} `}
+  style={blur ? "filter:blur(2px);" : ""}
+>
+  <div>
+    <div class="text-lg" style="font-family: 'Dela Gothic One', sans-serif;">
+      Retour produit
+    </div>
+    <hr class="my-4 border-t border-gray-400" />
+  </div>
+  <div class="flex flex-col space-y-4">
+    <div class="flex gap-6 justify-between">
+      <div class="flex flex-col">
+        <label class="font-medium text-xs">First name</label>
+        <input
+          type="text"
+          placeholder="First Input"
+          class="p-2 border rounded-lg text-slate-300"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="font-medium text-xs">First name</label>
+        <input
+          type="text"
+          placeholder="Second Input"
+          class="p-2 border rounded"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label class="font-medium text-xs">First name</label>
+      <input
+        type="text"
+        placeholder="Second Input"
+        class="p-2 border rounded"
+      />
+    </div>
+    <div class="flex flex-col">
+      <label class="font-medium text-xs">First name</label>
+      <input
+        type="text"
+        placeholder="Second Input"
+        class="p-2 border rounded h-56"
+      />
+    </div>
+
+    <button
+      class="py-3 px-6 bg-pink-500 rounded-lg w-fit ml-auto font-semibold text-white"
+      >Envoyer</button
+    >
+  </div>
+</div>
+
+<style>
+  /*   #form {
+    animation: spin 1s linear both;
+    animation-timeline: scroll();
+  }
+
+  @keyframes spin {
+    0% {
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    100% {
+      opacity: 100;
+      transform: rotate(360deg);
+    }
+  } */
+</style>
