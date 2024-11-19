@@ -130,7 +130,7 @@ import Form from "../components/Form.astro";
       class="min-h-[80vh] flex flex-col justify-around items-center px-96 py-20 gap-6"
     >
       <h2 class="font-bold text-3xl">
-        Créer votre formulaire avec simplicité <span class="text-pink-500"
+        Créer votre formulaire avec simplicité <span class="text-[#F73060]"
           >simplicité</span
         >
       </h2>
@@ -142,112 +142,212 @@ import Form from "../components/Form.astro";
         </div>
         <div class="flex flex-col gap-3 w-1/2">
           <div>
-            Formats
-            <div class="w-16 h-16 bg-white border"></div>
+            <h4 class="font-semibold text-xl">Formats</h4>
+            <div class="flex gap-3">
+              <div
+                class="w-16 h-16 bg-white rounded-lg border border-blue-500 relative"
+              >
+                <div
+                  class="w-4 h-4 bg-blue-500 absolute bottom-0 right-0 rounded-lg translate-x-1/2 translate-y-1/2"
+                >
+                </div>
+              </div>
+              <div class="h-16 w-48 bg-slate-200 rounded-lg"></div>
+            </div>
           </div>
-          <div>
-            Couleurs
-            <div class="w-16 h-16 bg-white border"></div>
+          <div class="flex flex-col gap-2">
+            <h4 class="font-semibold text-xl">Couleurs</h4>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 bg-black rounded-xl border"></div>
+              <p class="text-slate-500">primaire</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="w-8 h-8 bg-[#F73060] rounded-xl border"></div>
+              <p class="text-slate-500">primaire</p>
+            </div>
           </div>
-          <div>
-            Couleurs
-            <div class="w-16 h-16 bg-white border"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Section 3 -->
-    <div class="h-[80vh] flex flex-col justify-around items-center py-20">
-      <h2 class="font-bold text-3xl">Plusieurs besoin un seul outil.</h2>
+          <div class="flex flex-col gap-2">
+            <h4 class="font-semibold text-xl">Champs</h4>
+            <div class="flex items-center gap-3">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
 
-      <div class="flex h-full gap-20 justify-between w-full items-center px-72">
-        <div class="flex flex-col gap-2 justify-center items-center w-1/2">
-          <h3
-            class="font-bold text-2xl text-left mr-auto"
-            style="font-family: 'Dela Gothic One', sans-serif;"
-          >
-            Et bien plus <br /> encore...
-          </h3>
-          <div class="flex flex-col w-full py-10 gap-6">
-            <div
-              class="w-full border font-bold p-3 bg-white rounded-lg flex justify-between"
-              style="font-family: 'Dela Gothic One', sans-serif;"
-            >
-              Chat client
-              <div>➜</div>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
             </div>
-            <div
-              style="font-family: 'Dela Gothic One', sans-serif;"
-              class="text-slate-300 hover:text-slate-200"
-            >
-              Tracking demande
+            <div class="flex items-center gap-3">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
+
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+              <p class="text-slate-500">Texte</p>
             </div>
-            <div
-              style="font-family: 'Dela Gothic One', sans-serif;"
-              class="text-slate-300 hover:text-slate-200"
-            >
-              Daily task
-            </div>
-            <div
-              style="font-family: 'Dela Gothic One', sans-serif;"
-              class="text-slate-300 hover:text-slate-200"
-            >
-              Assignation
-            </div>
+            <style>
+              .switch {
+                position: relative;
+                display: inline-block;
+                width: 34px;
+                height: 20px;
+              }
+
+              .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+              }
+
+              .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: 0.4s;
+                border-radius: 34px;
+              }
+
+              .slider:before {
+                position: absolute;
+                content: "";
+                height: 12px;
+                width: 12px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: 0.4s;
+                border-radius: 50%;
+              }
+
+              input:checked + .slider {
+                background-color: #2196f3;
+              }
+
+              input:checked + .slider:before {
+                transform: translateX(14px);
+              }
+            </style>
           </div>
         </div>
-        <div class="border h-1/2 w-1/2 rounded-lg"></div>
       </div>
-    </div>
-    <!-- Section 4 video -->
-    <div class="h-[80vh] flex flex-col justify-center items-center px-72">
-      <div class="border h-[600px] rounded-lg aspect-video"></div>
+      <!-- Section 3 -->
+      <div
+        class="h-[80vh] flex flex-col justify-around items-center py-20 w-full"
+      >
+        <h2 class="font-bold text-3xl">Plusieurs besoin un seul outil.</h2>
+
+        <div class="flex h-full gap-20 justify-between w-full items-center">
+          <div class="flex flex-col gap-2 justify-center items-center w-1/2">
+            <h3
+              class="font-bold text-2xl text-left mr-auto"
+              style="font-family: 'Dela Gothic One', sans-serif;"
+            >
+              Et bien plus <br /> encore...
+            </h3>
+            <div class="flex flex-col w-full py-10 gap-6">
+              <div
+                class="w-full border font-bold p-3 bg-white rounded-lg flex justify-between"
+                style="font-family: 'Dela Gothic One', sans-serif;"
+              >
+                Chat client
+                <div>➜</div>
+              </div>
+              <div
+                style="font-family: 'Dela Gothic One', sans-serif;"
+                class="text-slate-300 hover:text-slate-200"
+              >
+                Tracking demande
+              </div>
+              <div
+                style="font-family: 'Dela Gothic One', sans-serif;"
+                class="text-slate-300 hover:text-slate-200"
+              >
+                Daily task
+              </div>
+              <div
+                style="font-family: 'Dela Gothic One', sans-serif;"
+                class="text-slate-300 hover:text-slate-200"
+              >
+                Assignation
+              </div>
+            </div>
+          </div>
+          <div class="border h-1/2 w-1/2 rounded-lg"></div>
+        </div>
+      </div>
+      <!-- Section 4 video -->
+      <div class="h-[80vh] flex flex-col justify-center items-center px-72">
+        <div class="border h-[600px] rounded-lg aspect-video"></div>
+      </div>
     </div>
   </main>
+
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes navbar-w {
+      0% {
+        width: 50%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeInLow {
+      0% {
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+      }
+      50% {
+        background-color: transparent;
+      }
+      100% {
+        background-size: 100% 100%;
+        background-position: 100% 100%;
+      }
+    }
+
+    @keyframes move-bottom {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(50px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style>
 </Layout>
-
-<style>
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes navbar-w {
-    0% {
-      width: 50%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  @keyframes fadeInLow {
-    0% {
-      background-size: 400% 400%;
-      background-position: 0% 0%;
-    }
-    50% {
-      background-color: transparent;
-    }
-    100% {
-      background-size: 100% 100%;
-      background-position: 100% 100%;
-    }
-  }
-
-  @keyframes move-bottom {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(50px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-</style>
