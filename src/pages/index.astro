@@ -1,311 +1,253 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+
 import Form from "../components/Form.astro";
+import "../styles/global.css";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ChevronRight, BarChart2, Users, Bell } from "lucide-react";
 ---
 
 <Layout title="Askform">
   <main class="bg-white h-full overflow-x-hidden">
-    <!-- navbar -->
-    <div
-      class="absolute top-5 border w-full max-w-5xl bg-white m-auto right-1/2 translate-x-1/2 rounded-full flex justify-between z-20"
-      style="animation:navbar-w ease-out 80s;"
-    >
-      <div class="py-3 pl-3 flex items-center">
-        <span class="font-black">ask</span><span
-          class="italic text-pink-500 font-medium">form</span
+    <div class="min-h-screen bg-[#F4F4F4] flex flex-col gap-3">
+      {/* Header */}
+      <header class="border-b">
+        <nav
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
         >
-      </div>
-      <div class="flex gap-6 py-3 items-center">
-        <div style="font-family: 'Dela Gothic One', sans-serif;">Acceuil</div>
-        <div
-          class="text-slate-300 hover:text-slate-200"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Fonctionnalité
-        </div>
-        <div
-          class="text-slate-300 hover:text-slate-200"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Tarif
-        </div>
-        <div
-          class="text-slate-300 hover:text-slate-200"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Démos
-        </div>
-      </div>
-      <a href="https://app.askform.fr">
-        <button
-          class="border border-black p-3 rounded-full text-xs my-2 mr-3 hover:text-slate-500"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Se connecter
-        </button>
-      </a>
-    </div>
-    <!-- header -->
-    <div
-      class="h-[100vh] relative overflow-x-hidden"
-      style="background: linear-gradient(180deg, #F73060 23%, rgba(138, 48, 247, 0) 100%);
-      animation:fadeInLow 2s linear;
-      
-"
-    >
-      <div class="flex flex-col justify-center items-center h-[100vh] gap-6">
-        <div
-          class="h-[435px] w-[435px] bg-[#FCFE92] rounded-full border transition-all absolute -left-36 top-20"
-          style="filter: blur(150px);
-      animation:fadeIn 2s ease-in-out, move-bottom 2s ease-in-out infinite;"
-        >
-        </div>
-        <div
-          class="h-[435px] w-[435px] bg-[#FEA492] rounded-full border transition-all absolute top-0 -right-36 opacity-0"
-          style="filter: blur(110px);
-        animation:fadeIn 2s ease-in-out forwards, move-bottom 2s ease-in-out infinite; 
-        animation-delay: 1s;  "
-        >
-        </div>
+          <span class="text-xl font-semibold flex gap-0">
+            <span class="font-bold">ask</span>
+            <span class="">form</span>
+          </span>
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-sm text-gray-800 font-bold">Accueil</a>
+            <a href="#" class="text-sm text-gray-600">Fonctionnalité</a>
+            <a href="#" class="text-sm text-gray-600">Tarif</a>
+            <a href="#" class="text-sm text-gray-600">Démos</a>
+          </div>
+          <div>
+            <Button variant="ghost" className="ml-4">Se connecter</Button>
+            <Button>Démarrer</Button>
+          </div>
+        </nav>
+      </header>
 
-        <h1
-          class="text-white text-6xl text-center"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Transformer vos <br /> besoins en Form.
-        </h1>
-        <p
-          class="text-white text-xl text-center"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-        >
-          Une infinité de possibilité de générer et <br /> gérer ses besoins
-        </p>
-        <button
-          class="bg-black rounded-lg text-white py-4 px-6 hover:bg-[#F73060] hover:text-slate-200 transition-all"
-          style="font-family: 'Dela Gothic One', sans-serif;"
-          >Commencer ➜</button
-        >
-        <div class="flex flex-col gap-3 items-center">
-          <div class="flex">
-            <div
-              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
-            >
-            </div>
-            <div
-              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
-            >
-            </div>
-            <div
-              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
-            >
-            </div>
-            <div
-              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
-            >
-            </div>
-            <div
-              class="w-8 h-8 bg-blue-500 rounded-full mt-4 -mr-4 border hover:bg-blue-300 transition-all"
-            >
+      {/* Hero Section */}
+      <section
+        class="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white rounded-lg border"
+      >
+        <div class="max-w-3xl">
+          <span
+            class="text-sm text-gray-500 border rounded-xl bg-[#F5F5F5] px-4 py-1"
+            >Askform version 1.0</span
+          >
+          <h1 class="mt-4 text-4xl sm:text-5xl font-bold leading-tight">
+            Une infinité de possibilité de générer et gérer ses besoins
+          </h1>
+          <p class="mt-4 text-gray-600">
+            Créez des formulaires adaptés à vos besoins pour collecter les
+            informations essentielles rapidement
+          </p>
+          <div class="mt-8 flex gap-4">
+            <Button className="gap-2"> S'inscrire avec Google </Button>
+            <Button variant="outline"> S'inscrire avec un e-mail </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl">
+              Différents <span class="font-bold">Cas d'usage</span>
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Créez des formulaires entièrement personnalisables, parfaitement
+              adaptés aux besoins de votre activité
+            </p>
+          </div>
+
+          <div class="mt-12 grid md:grid-cols-3 gap-8">
+            {
+              [
+                {
+                  title: "E-commerçant",
+                  description: (
+                    <>
+                      Créez des formulaires adaptés pour les retours, les
+                      réclamations, ou les questions sur les commandes.
+                      <br />
+                      <br />
+                      Automatisez l’attribution des demandes au service concerné
+                      (SAV, logistique, etc.).
+                    </>
+                  ),
+                },
+                {
+                  title: "TPE-PME",
+                  description: (
+                    <>
+                      Proposez des formulaires pré-remplis pour chaque type de
+                      demande (congés, matériel, problème technique).
+                      <br />
+                      <br />
+                      Facilitez le suivi des demandes avec des statuts en temps
+                      réel (soumis, en cours, résolu).
+                    </>
+                  ),
+                },
+                {
+                  title: "Freelance",
+                  description: (
+                    <>
+                      Créez un formulaire standardisé pour collecter les besoins
+                      des clients (type de projet, budget, délai).
+                      <br />
+                      <br />
+                      Centralisez toutes les demandes dans un tableau clair et
+                      priorisez les opportunités.
+                    </>
+                  ),
+                },
+              ].map((useCase, index) => (
+                <Card key={index} className="p-6">
+                  <h3 class="text-xl font-semibold">{useCase.title}</h3>
+                  <p class="mt-2 text-gray-600">{useCase.description}</p>
+                  <div class="mt-4 space-y-2">
+                    {[1, 2, 3].map((item) => (
+                      <div class="flex items-center gap-2">
+                        <div class="h-4 w-4 rounded bg-gray-200" />
+                        <div class="h-4 w-32 rounded bg-gray-200" />
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl">
+              Dans un <span class="font-bold">un seul outil.</span>
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Explorez des fonctionnalités sur mesure pour répondre aux besoins
+              spécifiques de votre activité.
+            </p>
+          </div>
+
+          <div class="mt-12 gap-8">
+            <div class="flex gap-2">
+              <Card className="p-6 w-1/3">
+                <div
+                  class="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                >
+                  <Users className="h-5 w-5 text-primary" />
+                </div>
+                <h3 class="mt-4 text-xl font-semibold">Expérience Client</h3>
+                <p class="mt-2 text-gray-600">
+                  Créez une expérience client sur mesure du ticket à la
+                  résolution de la demande
+                </p>
+              </Card>
+
+              <div class="flex flex-col gap-2">
+                <div class="flex gap-2">
+                  <Card className="p-6">
+                    <div
+                      class="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                    >
+                      <BarChart2 className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold">
+                      Données analytiques
+                    </h3>
+                    <p class="mt-2 text-gray-600">
+                      Vue détaillée des métriques pour améliorer la performance
+                      de vos flux
+                    </p>
+                  </Card>
+
+                  <Card className="p-6">
+                    <div
+                      class="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                    >
+                      <Bell className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 class="mt-4 text-xl font-semibold">Notifications</h3>
+                    <p class="mt-2 text-gray-600">
+                      Soyez notifié des nouveaux tickets dans votre espace et
+                      suivez leur progression
+                    </p>
+                  </Card>
+                </div>
+                <Card className="p-6 w-full">
+                  <div
+                    class="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                  >
+                    <Bell className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 class="mt-4 text-xl font-semibold">Gestion d'équipe</h3>
+                  <p class="mt-2 text-gray-600">
+                    Gestions & Organisation des demandes au sein de votre
+                    entreprise
+                  </p>
+                </Card>
+              </div>
             </div>
           </div>
-          <p class="opacity-50 text-sm font-medium">
-            Plus de 40 Bêta testeur recommandent askform
+        </div>
+      </section>
+
+      {/* Integration Section */}
+
+      <section
+        class="bg-white rounded-lg border py-20 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <div class="">
+          <h2 class="text-3xl font-bold">
+            Synchronisez vos outils <br /> essentiels pour une gestion <br /> simplifiée.
+          </h2>
+          <p class="mt-4 text-gray-600">
+            Askform propose des intégrations intégrées pour toutes les
+            applications <br /> que vous connaissez et aimez déjà.
           </p>
         </div>
-      </div>
-    </div>
-    <!-- Section 1 -->
-    <div class="h-[100vh] flex flex-col justify-start items-center bg-white">
-      <h2
-        class="text-[40px] mt-20"
-        style="font-family: 'Dela Gothic One', sans-serif;"
-      >
-        Différents <span class="text-[#F73060]">Cas d’usage</span>
-      </h2>
-      <div class="relative h-full">
-        <Form position="absolute" rotate="left" blur={true} />
-        <Form position="absolute" />
-        <Form position="absolute" rotate="right" blur={true} />
-      </div>
-    </div>
-    <!-- Section 2 fonctionnalités -->
-    <div
-      class="min-h-[80vh] flex flex-col justify-around items-center px-96 py-20 gap-6"
-    >
-      <h2 class="font-bold text-3xl">
-        Créer votre formulaire avec simplicité <span class="text-[#F73060]"
-          >simplicité</span
-        >
-      </h2>
-      <div
-        class="h-fit w-full bg-slate-100 border rounded-xl flex items-center p-6 gap-6"
-      >
-        <div class="w-1/2">
-          <Form position="relative" className="scale-75" />
-        </div>
-        <div class="flex flex-col gap-3 w-1/2">
-          <div>
-            <h4 class="font-semibold text-xl">Formats</h4>
-            <div class="flex gap-3">
-              <div
-                class="w-16 h-16 bg-white rounded-lg border border-blue-500 relative"
-              >
-                <div
-                  class="w-4 h-4 bg-blue-500 absolute bottom-0 right-0 rounded-lg translate-x-1/2 translate-y-1/2"
-                >
-                </div>
-              </div>
-              <div class="h-16 w-48 bg-slate-200 rounded-lg"></div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h4 class="font-semibold text-xl">Couleurs</h4>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 bg-black rounded-xl border"></div>
-              <p class="text-slate-500">primaire</p>
-            </div>
-            <div class="flex gap-3">
-              <div class="w-8 h-8 bg-[#F73060] rounded-xl border"></div>
-              <p class="text-slate-500">primaire</p>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <h4 class="font-semibold text-xl">Champs</h4>
-            <div class="flex items-center gap-3">
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
 
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
-
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
-              <label class="switch">
-                <input type="checkbox" />
-                <span class="slider round"></span>
-              </label>
-              <p class="text-slate-500">Texte</p>
-            </div>
-            <style>
-              .switch {
-                position: relative;
-                display: inline-block;
-                width: 34px;
-                height: 20px;
-              }
-
-              .switch input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-              }
-
-              .slider {
-                position: absolute;
-                cursor: pointer;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #ccc;
-                transition: 0.4s;
-                border-radius: 34px;
-              }
-
-              .slider:before {
-                position: absolute;
-                content: "";
-                height: 12px;
-                width: 12px;
-                left: 4px;
-                bottom: 4px;
-                background-color: white;
-                transition: 0.4s;
-                border-radius: 50%;
-              }
-
-              input:checked + .slider {
-                background-color: #2196f3;
-              }
-
-              input:checked + .slider:before {
-                transform: translateX(14px);
-              }
-            </style>
-          </div>
-        </div>
-      </div>
-      <!-- Section 3 -->
-      <div
-        class="h-[80vh] flex flex-col justify-around items-center py-20 w-full"
-      >
-        <h2 class="font-bold text-3xl">Plusieurs besoin un seul outil.</h2>
-
-        <div class="flex h-full gap-20 justify-between w-full items-center">
-          <div class="flex flex-col gap-2 justify-center items-center w-1/2">
-            <h3
-              class="font-bold text-2xl text-left mr-auto"
-              style="font-family: 'Dela Gothic One', sans-serif;"
+        <div class="mt-12 relative">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div
+              class="h-[300px] w-[300px] rounded-full border-2 border-gray-200"
             >
-              Et bien plus <br /> encore...
-            </h3>
-            <div class="flex flex-col w-full py-10 gap-6">
-              <div
-                class="w-full border font-bold p-3 bg-white rounded-lg flex justify-between"
-                style="font-family: 'Dela Gothic One', sans-serif;"
-              >
-                Chat client
-                <div>➜</div>
-              </div>
-              <div
-                style="font-family: 'Dela Gothic One', sans-serif;"
-                class="text-slate-300 hover:text-slate-200"
-              >
-                Tracking demande
-              </div>
-              <div
-                style="font-family: 'Dela Gothic One', sans-serif;"
-                class="text-slate-300 hover:text-slate-200"
-              >
-                Daily task
-              </div>
-              <div
-                style="font-family: 'Dela Gothic One', sans-serif;"
-                class="text-slate-300 hover:text-slate-200"
-              >
-                Assignation
-              </div>
             </div>
           </div>
-          <div class="border h-1/2 w-1/2 rounded-lg"></div>
+          <div
+            class="relative grid grid-cols-3 gap-8 items-center justify-items-center"
+          >
+            {
+              ["M", "O", "A"].map((letter, index) => (
+                <div class="h-12 w-12 rounded-full bg-white shadow-lg flex items-center justify-center font-semibold">
+                  {letter}
+                </div>
+              ))
+            }
+          </div>
         </div>
-      </div>
-      <!-- Section 4 video -->
-      <div class="h-[80vh] flex flex-col justify-center items-center px-72">
-        <div class="border h-[600px] rounded-lg aspect-video"></div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer class="border-t py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div class="text-xl font-semibold">askform</div>
+        </div>
+      </footer>
     </div>
   </main>
 
