@@ -6,6 +6,8 @@ import "../styles/global.css";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight, BarChart2, Users, Bell, Ticket } from "lucide-react";
+
+const LINK_WEB_APP = "https://app.askform.fr";
 ---
 
 <Layout title="Askform">
@@ -33,9 +35,10 @@ import { ChevronRight, BarChart2, Users, Bell, Ticket } from "lucide-react";
             >
           </div>
           <div>
-            <Button variant="ghost" className="font-medium">Se connecter</Button
+            <Button variant="ghost" className="font-medium">
+              <a href={LINK_WEB_APP}> Se connecter </a></Button
             >
-            <Button>Démarrer</Button>
+            <Button><a href={LINK_WEB_APP}> Démarrer </a> </Button>
           </div>
         </nav>
       </header>
@@ -57,8 +60,12 @@ import { ChevronRight, BarChart2, Users, Bell, Ticket } from "lucide-react";
             informations essentielles rapidement
           </p>
           <div class="mt-8 flex gap-4">
-            <Button className="gap-2"> S'inscrire avec Google </Button>
-            <Button variant="outline"> S'inscrire avec un e-mail </Button>
+            <Button className="gap-2">
+              <a href={LINK_WEB_APP}> S'inscrire avec Google </a>
+            </Button>
+            <Button variant="outline">
+              <a href={LINK_WEB_APP}> S'inscrire avec un e-mail </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -341,9 +348,9 @@ import { ChevronRight, BarChart2, Users, Bell, Ticket } from "lucide-react";
       </section>
 
       {/* Footer */}
-      <footer class="border-t py-8">
+      <footer class="border-t py-4 mt-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div class="text-xl flex items-center justify-center">
+          <div class="text-sm flex items-center justify-center">
             <span class="tilt-warp-font font-black">ask</span>
             <span class="italic font-semibold">form</span>
           </div>
