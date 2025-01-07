@@ -22,6 +22,11 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <slot />
@@ -29,17 +34,10 @@ const { title } = Astro.props;
 </html>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
-
   html,
   body,
   main {
     max-width: 100%;
     overflow-x: hidden;
-  }
-  .dela-gothic-one-regular {
-    font-family: "Dela Gothic One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
   }
 </style>
