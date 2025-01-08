@@ -15,19 +15,32 @@
     />
 
     <script>
+      declare global {
+        interface Window {
+          toggleExclusion: () => void;
+        }
+      }
       window.addEventListener("load", function (e) {
         var exclusionState = window.localStorage.plausible_ignore == "true";
 
         if (exclusionState) {
-          document.getElementById("plausible_not").classList.add("hidden");
-          document.getElementById("plausible_yes").classList.remove("hidden");
-          document.getElementById("plausible_button").innerHTML =
-            "Stop excluding my visits";
+          var plausibleNot = document.getElementById("plausible_not");
+          if (plausibleNot) plausibleNot.classList.add("hidden");
+          var plausibleYes = document.getElementById("plausible_yes");
+          if (plausibleYes) plausibleYes.classList.remove("hidden");
+          var plausibleButton = document.getElementById("plausible_button");
+          if (plausibleButton) {
+            plausibleButton.innerHTML = "Stop excluding my visits";
+          }
         } else {
-          document.getElementById("plausible_yes").classList.add("hidden");
-          document.getElementById("plausible_not").classList.remove("hidden");
-          document.getElementById("plausible_button").innerHTML =
-            "Exclude my visits";
+          var plausibleYes = document.getElementById("plausible_yes");
+          if (plausibleYes) plausibleYes.classList.add("hidden");
+          var plausibleNot = document.getElementById("plausible_not");
+          if (plausibleNot) plausibleNot.classList.remove("hidden");
+          var plausibleButton = document.getElementById("plausible_button");
+          if (plausibleButton) {
+            plausibleButton.innerHTML = "Exclude my visits";
+          }
         }
       });
 
