@@ -10,6 +10,7 @@ import { Bell, Ticket } from "lucide-react";
 import shopifyLogo from "../../public/shopify-logo.png";
 import slackLogo from "../../public/slack-logo.png";
 import excelLogo from "../../public/excel-logo.png";
+import videoAskform from "/Askform-column.mp4";
 
 const LINK_WEB_APP = "https://app.askform.fr";
 ---
@@ -20,15 +21,10 @@ const LINK_WEB_APP = "https://app.askform.fr";
       class="min-h-screen bg-[#F4F4F4] flex flex-col gap-3 px-4 sm:px-6 lg:px-8"
     >
       {/* Header */}
-      <header class="border rounded-lg mt-6 bg-white max-w-6xl w-full mx-auto">
+      <!--       <header class="border rounded-lg mt-6 bg-white max-w-6xl w-full mx-auto">
         <nav
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
         >
-          <span class="text-xl max-md:text-base font-semibold flex gap-0">
-            <span class="tilt-warp-font font-bold">ask</span>
-            <span class="italic">form</span>
-          </span>
-
           <div class="flex items-center">
             <Button variant="ghost" className="font-medium max-md:text-xs ">
               <a href={LINK_WEB_APP}>Se connecter</a></Button
@@ -38,32 +34,51 @@ const LINK_WEB_APP = "https://app.askform.fr";
             </Button>
           </div>
         </nav>
-      </header>
+      </header> -->
 
       {/* Hero Section */}
       <section
-        class="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white rounded-lg border h-[80vh] justify-start flex items-center relative overflow-hidden group"
+        class="max-w-6xl mt-6 w-full mx-auto p-4 sm:p-6 lg:p-8 bg-white rounded-lg border h-[80vh] justify-start flex items-center relative overflow-hidden group flex-col gap-3"
       >
-        <div class="max-w-3xl">
-          <span
+        <div class="max-w-3xl text-center">
+          <!--     <span
             class="text-sm max-md:text-xs text-gray-500 border rounded-xl bg-[#F5F5F5] px-4 py-1"
             >Askform version 1.0</span
+          > -->
+          <span
+            class="text-xl flex w-full justify-center max-md:text-base font-semibold gap-0"
           >
-          <h1 class="mt-4 text-4xl sm:text-5xl font-bold leading-tight">
-            Une infinité de possibilité <br /> de générer <br /> et gérer ses besoins
+            <span class="tilt-warp-font font-bold">ask</span>
+            <span class="italic">form</span>
+          </span>
+          <h1
+            class="mt-2 text-3xl text-center sm:text-4xl font-bold leading-tight"
+          >
+            Une infinité de possibilité de générer <br /> et gérer ses besoins
           </h1>
           <p class="mt-4 text-slate-400 max-md:text-sm">
             Créez des formulaires adaptés à vos besoins pour collecter <br /> les
             informations essentielles rapidement
           </p>
-          <div class="mt-4 flex gap-4">
-            <Button className="gap-2 max-md:text-xs ">
-              <a href={LINK_WEB_APP}> Créer un formulaire gratuitement </a>
+          <div class="mt-4 flex gap-4 w-full justify-center">
+            <Button
+              className="gap-2 max-md:text-xs flex items-center justify-center"
+            >
+              <a href={LINK_WEB_APP}>
+                Rejoindre la Beta privée
+                <!--  Créer un formulaire gratuitement -->
+              </a>
             </Button>
           </div>
         </div>
-
-        <div
+        <video
+          src={videoAskform}
+          autoplay
+          loop
+          muted
+          class="rounded-lg border h-96 object-cover aspect-w-16 aspect-h-9"
+        ></video>
+        <!-- <div
           class="absolute -bottom-6 h-3/4 border bg-slate-50 w-1/2 rounded-lg -right-28 flex flex-col gap-8 p-10 group-hover:-bottom-4 transition-all max-xl:scale-90 max-xl:-bottom-10 max-lg:scale-75 max-lg:-bottom-16 max-md:hidden"
         >
           <div class="w-full bg-slate-100 h-2"></div>
@@ -79,7 +94,7 @@ const LINK_WEB_APP = "https://app.askform.fr";
           </div>
           <div class="w-full bg-slate-200 border h-32 rounded-sm"></div>
           <div class="w-20 bg-slate-200 border h-6 rounded-sm"></div>
-        </div>
+        </div> -->
       </section>
 
       {/* Use Cases Section */}
